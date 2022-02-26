@@ -1,0 +1,25 @@
+
+<% layout('layouts/boilerplate') %> 
+
+<h1>Posts</h1>
+<div class="row">
+    <% for (let post of posts) {%>
+        <div class="col-md-6 col-lg-4">
+            <a href="/posts/<%=post.id%>" class="text-decoration-none text-dark">
+                <div class="card mb-3">
+                    <img src='<%=post.image%>' class="img-fluid rounded card-img-top">
+                    <div class="card-body">
+        
+                        <h5 class="card-title"> <%=post.title%> </h5>
+                        <h5 class="card-text"> <%=post.date%> </h5>
+                        <h5 class="card-text"> <%=post.type%> </h5>
+                        <p class="card-text"> <a href="<%=post.link%>"><%=post.link%></a></p>
+                        
+                    </div>
+                </div>
+            </a>
+        </div>
+    <% } %> 
+</div>
+
+

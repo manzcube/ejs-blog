@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-4">
+            <img src="<%=post.image%>" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title mb-3"><%=post.title%></h5>
+              <p class="card-text mb-3"><%=post.body%></p>
+              <p class="card-text mb-3"><a target="blank" href="<%=post.link%>"><%=post.link%></a></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted"><%=post.date%></li>
+              <li class="list-group-item text-muted"><%=post.type%></li>
+            </ul>
+            <div class="card-body">
+                <a class="card-link btn btn-info" href="/posts/<%=post.id%>/edit">edit</a>
+                <form class="d-inline mx-2" action="/posts/<%=post.id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
