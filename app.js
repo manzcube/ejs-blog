@@ -36,19 +36,14 @@ app.use(methodOverride('_method'))
 
 //Starting of requests
 
-
-app.get('/', (req, res) => {
-    res.render('home')
-})
-app.get('/posts', async (req, res) => {
+app.get(['/', '/posts'], async (req, res) => {
     const posts = await Post.find({})
     res.render('posts/index', {posts})
 })
 
 app.get('/posts/improvement', async (req, res) => {
     const posts = await Post.find({type: "Improvement"})
-    res.render('posts/index', {posts})
-    
+    res.render('posts/index', {posts})    
 })
 
 app.get('/posts/trading', async (req, res) => {

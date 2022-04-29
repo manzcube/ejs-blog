@@ -1,8 +1,12 @@
 
 <% layout('layouts/boilerplate') %> 
 
-<h1>Posts</h1>
+<h1 class="mb-5">Posts</h1>
 <div class="row">
+    <div class="d-flex container w-100 mb-5">
+        <a href="/posts/trading" class="me-5">Trading Posts</a>
+        <a href="/posts/improvement">Improvement Posts</a>
+    </div>
     <% for (let post of posts) {%>
         <div class="col-md-6 col-lg-4">
             <a href="/posts/<%=post.id%>" class="text-decoration-none text-dark">
